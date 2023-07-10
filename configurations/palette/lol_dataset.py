@@ -12,14 +12,17 @@ class LnMbPair:
 
 class LOLDataset(data.Dataset):
     def __init__(self, data_path, loader=lol_loader):
-        self.data_path = data_path
-        self.dataset = np.load(self.data_path, mmap_mode='r')
+        data_dir, data_index = data_path.split(':')
+        self.data_file = data_dir+'/data.npy'
+        self.index_file = data_dir+'/data-%s.split.npy' % data_index
+        self.indices = np.load(self.index_file)
+        self.dataset = np.load(self.data_file, mmap_mode='r')
         self.loader = loader
 
     def __getitem__(self, index):
         ret = {}
         
-        pair = self.loader(self.dataset, index)
+        pair = self.loader(self.dataset, self.indices(index))
 
         img = pair.manybody
         cond_image = pair.lognormal
@@ -30,4 +33,4 @@ class LOLDataset(data.Dataset):
         return ret
 
     def __len__(self):
-        return self.dataset.shape[0]
+        return self.indices.size

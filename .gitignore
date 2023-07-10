@@ -1,1 +1,3 @@
 *.npy
+.env
+launch.json

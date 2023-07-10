@@ -20,7 +20,8 @@
             "which_dataset": {  // import designated dataset using arguments 
                 "name": ["lol_dataset", "LOLDataset"], // import Dataset() class / function(not recommend) from data.dataset.py (default is [data.dataset.py])
                 "args":{ // arguments to initialize dataset
-                    "data_path": "../../mini.npy"
+                    "data_path": "../../mini.npy",
+                    "split": 0.8
                 } 
             },
             "dataloader":{
@@ -45,7 +46,8 @@
             "which_dataset": {
                 "name": "LOLDataset", // import Dataset() class / function(not recommend) from default file
                 "args":{
-                    "data_root": "../../mini.npy"
+                    "data_root": "../../mini.npy",
+                    "split": -0.1
                 }
             },
             "dataloader":{
