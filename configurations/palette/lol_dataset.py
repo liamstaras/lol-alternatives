@@ -22,7 +22,7 @@ class LOLDataset(data.Dataset):
     def __getitem__(self, index):
         ret = {}
         
-        pair = self.loader(self.dataset, self.indices(index))
+        pair = self.loader(self.dataset, self.indices[index])
 
         img = pair.manybody
         cond_image = pair.lognormal
