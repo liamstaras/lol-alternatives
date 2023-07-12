@@ -1,0 +1,4 @@
+pytz==2023.3
+python-dateutil==2.8.2
+tensorboard==2.9.0
+clean-fid==0.1.35
