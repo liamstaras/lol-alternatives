@@ -11,5 +11,5 @@
 source ./requirements/modules.sh
 source .env/bin/activate
 echo SLURM allocated GPUs: $CUDA_VISIBLE_DEVICES
-python -m palette train --debug -c lol.json -gpu $CUDA_VISIBLE_DEVICES
+python -m palette train --debug -c configurations/palette/lol.json -gpu $CUDA_VISIBLE_DEVICES
 deactivate
