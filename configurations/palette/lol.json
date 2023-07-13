@@ -34,7 +34,7 @@
                 },
                 "val_args":{ // arguments to initialize valid_dataloader, will overwrite the parameters in train_dataloader
                     "batch_size": 1, // batch size in each gpu
-                    "num_workers": 4,
+                    "num_workers": 1,
                     "shuffle": false,
                     "pin_memory": true,
                     "drop_last": false
