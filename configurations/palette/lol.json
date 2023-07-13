@@ -20,14 +20,14 @@
             "which_dataset": {  // import designated dataset using arguments 
                 "name": ["configurations.palette.lol_dataset", "LOLDataset"], // import Dataset() class / function(not recommend) from data.dataset.py (default is [data.dataset.py])
                 "args":{ // arguments to initialize dataset
-                    "data_path": "data/full:train"
+                    "data_path": "data/full-log-clean:train"
                 } 
             },
             "dataloader":{
                 "validation_split": 10, // percent or number 
                 "args":{ // arguments to initialize train_dataloader
                     "batch_size": 4, // batch size in each gpu
-                    "num_workers": 4,
+                    "num_workers": 1,
                     "shuffle": true,
                     "pin_memory": true,
                     "drop_last": true
@@ -45,13 +45,13 @@
             "which_dataset": {
                 "name": "LOLDataset", // import Dataset() class / function(not recommend) from default file
                 "args":{
-                    "data_root": "data/full:test"
+                    "data_root": "data/full-log-clean:test"
                 }
             },
             "dataloader":{
                 "args":{
                     "batch_size": 8,
-                    "num_workers": 4,
+                    "num_workers": 1,
                     "pin_memory": true
                 }
             }
@@ -131,14 +131,14 @@
         "n_iter": 1e8, // max interations
         "val_epoch": 5, // valdation every specified number of epochs
         "save_checkpoint_epoch": 10,
-        "log_iter": 1e4, // log every specified number of iterations
+        "log_iter": 1e2, // log every specified number of iterations
         "tensorboard" : true // tensorboardX enable
     },
     
     "debug": { // arguments in debug mode, which will replace arguments in train
-        "val_epoch": 1,
-        "save_checkpoint_epoch": 1,
-        "log_iter": 10,
+        "val_epoch": 20,
+        "save_checkpoint_epoch": 50,
+        "log_iter": 20,
         "debug_split": 50 // percent or number, change the size of dataloder to debug_split.
     }
 }
