@@ -1,7 +1,7 @@
 # this file contains functions to compare the training data to outputs
 
 import powerbox as pb
-import torch
+import numpy as np
 
 def power_spectrum_diff(output, target):
     
@@ -9,5 +9,5 @@ def power_spectrum_diff(output, target):
     target_ps, target_k = pb.get_power(target.cpu(), 1000)
 
     diff = (output_ps - target_ps)/target_ps
-    rms = torch.sqrt(torch.mean(diff**2))
+    rms = np.sqrt(np.mean(diff**2))
     return rms
