@@ -4,3 +4,4 @@ launch.json
 palette
 experiments
 slurm*
+*__pycache__*
