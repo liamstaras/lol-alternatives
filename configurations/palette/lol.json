@@ -137,14 +137,14 @@
         "n_iter": 1e8, // max interations
         "val_epoch": 1, // valdation every specified number of epochs
         "save_checkpoint_epoch": 10,
-        "log_iter": 1e2, // log every specified number of iterations
+        "target_log_iter": 5e2, // log every specified number of iterations
         "tensorboard" : true // tensorboardX enable
     },
     
     "debug": { // arguments in debug mode, which will replace arguments in train
         "val_epoch": 1,
         "save_checkpoint_epoch": 50,
-        "log_iter": 20,
+        "target_log_iter": 20,
         "debug_split": 50 // percent or number, change the size of dataloder to debug_split.
     }
 }
