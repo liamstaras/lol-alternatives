@@ -20,7 +20,7 @@
             "which_dataset": {  // import designated dataset using arguments 
                 "name": ["configurations.palette.lol_dataset", "LOLDataset"], // import Dataset() class / function(not recommend) from data.dataset.py (default is [data.dataset.py])
                 "args":{ // arguments to initialize dataset
-                    "data_path": "data/full-clean:train"
+                    "data_path": "data/full-log-clean:train"
                 } 
             },
             "dataloader":{
@@ -45,7 +45,7 @@
             "which_dataset": {
                 "name": "LOLDataset", // import Dataset() class / function(not recommend) from default file
                 "args":{
-                    "data_path": "data/full-clean:test"
+                    "data_path": "data/full-log-clean:test"
                 }
             },
             "dataloader":{
@@ -126,7 +126,7 @@
         ],
         "which_metrics": [
             {
-                "name": ["resources.metrics", "power_spectrum_diff"],
+                "name": ["resources.metrics", "power_spectrum_diff_log"],
                 "args": {}
             }
         ]
