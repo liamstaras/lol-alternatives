@@ -1,7 +1,7 @@
 *.npy
 .env
 launch.json
-palette
+/palette
 experiments
 slurm*
 *__pycache__*

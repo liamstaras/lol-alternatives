@@ -20,20 +20,20 @@
             "which_dataset": {  // import designated dataset using arguments 
                 "name": ["configurations.palette.lol_dataset", "LOLDataset"], // import Dataset() class / function(not recommend) from data.dataset.py (default is [data.dataset.py])
                 "args":{ // arguments to initialize dataset
-                    "data_path": "data/full-log-clean:train"
+                    "data_path": "data/full-clean:train"
                 } 
             },
             "dataloader":{
                 "validation_split": 10, // percent or number 
                 "args":{ // arguments to initialize train_dataloader
-                    "batch_size": 4, // batch size in each gpu
+                    "batch_size": 24, // batch size in each gpu
                     "num_workers": 1,
                     "shuffle": true,
                     "pin_memory": true,
                     "drop_last": true
                 },
                 "val_args":{ // arguments to initialize valid_dataloader, will overwrite the parameters in train_dataloader
-                    "batch_size": 1, // batch size in each gpu
+                    "batch_size": 24, // batch size in each gpu
                     "num_workers": 1,
                     "shuffle": false,
                     "pin_memory": true,
@@ -50,7 +50,7 @@
             },
             "dataloader":{
                 "args":{
-                    "batch_size": 8,
+                    "batch_size": 24,
                     "num_workers": 1,
                     "pin_memory": true
                 }
@@ -118,8 +118,11 @@
                 }
             }
         ],
-        "which_losses": [ // import designated list of losses without arguments
-            "mse_loss" // import mse_loss() function/class from default file (default is [models/losses.py]), equivalent to { "name": "mse_loss", "args":{}}
+        "which_losses": [
+            {
+                "name": ["torch.nn", "MSELoss"],
+                "args": {}
+            }
         ],
         "which_metrics": [
             {
