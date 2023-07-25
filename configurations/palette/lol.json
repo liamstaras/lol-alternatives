@@ -44,7 +44,7 @@
         },
         "test": { 
             "which_dataset": {
-                "name": "LOLDataset", // import Dataset() class / function(not recommend) from default file
+                "name": ["configurations.palette.lol_dataset", "LOLDataset"], // import Dataset() class / function(not recommend) from default file
                 "args":{
                     "data_path": "data/full-clean:test"
                 }
